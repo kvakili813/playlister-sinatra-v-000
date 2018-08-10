@@ -8,6 +8,6 @@ class Song < ActiveRecord::Base
   end
 
   def self.find_by_slug(slug)
-    self.where('name LIKE ?', "#{slug.gsub('-', ' ').downcase}").take
+    self.all.find {|instance| instance.slug == slug}
   end
 end
