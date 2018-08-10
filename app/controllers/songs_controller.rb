@@ -19,6 +19,7 @@ require 'pry'
     @song.genre_ids = params[:genres]
     @song.save
      flash[:message] = "Successfully created song."
+     binding.pry
      redirect("/songs/#{@song.slug}")
   end
    get '/songs/:slug/edit' do
