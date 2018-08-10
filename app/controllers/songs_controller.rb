@@ -3,8 +3,8 @@ require 'pry'
  class SongsController < ApplicationController
   use Rack::Flash
    get '/songs' do
+     binding.pry
     @songs = Song.all
-    binding.pry
     erb :'/songs/index'
   end
    get '/songs/new' do
